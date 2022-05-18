@@ -1,0 +1,13 @@
+apiVersion: extensions.istio.io/v1alpha1
+kind: WasmPlugin
+metadata:
+  name: my-wasm-filter
+  # enter namespace
+  namespace: istio-system
+spec:
+  # enter selector
+  selector:
+    matchLabels:
+      app: myapp
+  # enter filter url(oci, http, file)
+  url: https://github.com/acafela/envoy-wasm-filter-ext/raw/main/filter.wasm
